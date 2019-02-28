@@ -4,7 +4,6 @@
       <mat-card-title><h2>{{file.name ? 'Edit' : 'Add'}} File</h2></mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <input type="hidden" name="href" [(ngModel)]="file.href">
       <mat-form-field>
         <input matInput placeholder="File Name" [(ngModel)]="file.name"
                required name="name" #name>
@@ -23,8 +22,10 @@
     <mat-card-actions>
       <button mat-raised-button color="primary" type="submit"
               [disabled]="!fileForm.form.valid">Save</button>
-      <button mat-raised-button color="secondary" (click)="remove(file.href)"
-              *ngIf="file.href" type="button">Delete</button>
+      <button mat-raised-button color="secondary" (click)="remove(file.id)"
+              *ngIf="file.id" type="button">Delete</button>
+      <button mat-raised-button color="secondary" (click)="update(fileForm.value)"
+              *ngIf="file.id" type="button">Update</button>
       <a mat-button routerLink="/file-list">Cancel</a>
     </mat-card-actions>
     <mat-card-footer>

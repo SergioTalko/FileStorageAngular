@@ -5,13 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FileService } from './shared/file/file.service';
 import { FileListComponent } from './file-list/file-list.component';
 
 import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileEditComponent } from './file-edit/file-edit.component';
 import { FormsModule } from '@angular/forms';
+import {FileService} from './shared/file/file.service';
+import { FileAddComponent } from './file-add/file-add.component';
 
 
 
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     FileListComponent,
-    FileEditComponent
+    FileEditComponent,
+    FileAddComponent
 
   ],
   imports: [

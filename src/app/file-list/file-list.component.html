@@ -9,6 +9,8 @@
         <h3 mat-line>
           <a mat-button [routerLink]="['/file-edit', file.id]">{{file.name}}</a>
         </h3>
+        <button mat-raised-button color="secondary" (click)="deleteFile(file.id)"
+                *ngIf="file.id" type="button">Delete</button>
       </mat-list-item>
     </mat-list>
   </mat-card-content>
